@@ -11,85 +11,87 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         
+        html, body { 
+            height: 100%; 
+            width: 100%;
+            overflow: hidden; 
+            background-color: #0f172a;
+        }
+
         body { 
-            background: #0f172a; 
-            color: #fff; 
-            height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            overflow: hidden;
             position: relative;
         }
 
-        /* Fundo Simulando a Página Oficial (Desfocada) */
-        .bg-preview {
+        /* Fundo com o Print do Site Oficial */
+        .bg-screenshot {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.95)), 
-                        url('itagpro.jpg') center/cover no-repeat;
-            filter: blur(12px) brightness(0.6);
-            transform: scale(1.1);
+            /* Se a imagem for JPG ou PNG, ajuste a extensão abaixo */
+            background: url('official_bg.jpg') center top / cover no-repeat;
+            filter: blur(8px) brightness(0.5);
+            transform: scale(1.05); /* Evita bordas brancas pelo efeito de blur */
             z-index: 1;
         }
 
-        /* Overlay Modal de Seleção */
+        /* Modal Centralizado */
         .modal-container {
             position: relative;
             z-index: 10;
-            width: 100%;
-            max-width: 480px;
-            padding: 20px;
+            width: 90%;
+            max-width: 440px;
+            margin: auto;
         }
 
         .modal-card {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
-            padding: 35px 25px;
+            padding: 30px 22px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         }
 
         .logo-img {
-            height: 50px;
+            height: 48px;
             width: auto;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-radius: 50%;
         }
 
         .modal-title {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
+            margin-bottom: 6px;
         }
 
         .modal-subtitle {
             font-size: 13px;
             color: #94a3b8;
-            margin-bottom: 25px;
-            line-height: 1.5;
+            margin-bottom: 22px;
+            line-height: 1.4;
         }
 
-        /* Banners / Botões de Bandeira */
+        /* Botões de Bandeira */
         .flag-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .flag-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px 16px;
             border-radius: 12px;
             text-decoration: none;
             color: #ffffff;
@@ -99,8 +101,8 @@
         .flag-btn:hover {
             background: #2563eb;
             border-color: #3b82f6;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
         }
 
         .flag-info {
@@ -110,21 +112,21 @@
         }
 
         .flag-emoji {
-            font-size: 26px;
+            font-size: 24px;
             line-height: 1;
         }
 
         .country-name {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             text-align: left;
         }
 
         .status-tag {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             color: #4ade80;
-            background: rgba(74, 222, 128, 0.1);
+            background: rgba(74, 222, 128, 0.12);
             padding: 4px 8px;
             border-radius: 6px;
             text-transform: uppercase;
@@ -135,39 +137,29 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Selos de Segurança */
+        /* Rodapé do Modal */
         .security-badges {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
+            gap: 12px;
             font-size: 11px;
             color: #64748b;
-            padding-top: 15px;
+            padding-top: 14px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .security-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        footer-link {
-            display: block;
-            margin-top: 15px;
+        .footer-link {
+            margin-top: 12px;
             font-size: 11px;
-            color: #475569;
-            text-decoration: none;
         }
-        footer-link a { color: #64748b; text-decoration: none; }
-        footer-link a:hover { text-decoration: underline; }
+        .footer-link a { color: #64748b; text-decoration: none; }
+        .footer-link a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <!-- Fundo desfocado estilo loja oficial -->
-    <div class="bg-preview"></div>
+    <!-- Fundo com o print do site oficial -->
+    <div class="bg-screenshot"></div>
 
     <!-- Modal de Seleção -->
     <div class="modal-container">
@@ -176,17 +168,17 @@
             <img src="/logo.png" alt="Global Buy Central" class="logo-img">
             
             <h1 class="modal-title">Wählen Sie Ihr Lieferland</h1>
-            <p class="modal-subtitle">Wählen Sie Ihre Region, um regionale Angebote, Rabatte und schnelle Lieferzeiten zu prüfen.</p>
+            <p class="modal-subtitle">Bitte wählen Sie Ihre Region, um verfügbare Angebote und Expressversand zu prüfen.</p>
 
             <div class="flag-list">
                 
-                <!-- ALEMANHA (Destaque Principal) -->
+                <!-- ALEMANHA -->
                 <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7172" class="flag-btn">
                     <div class="flag-info">
                         <span class="flag-emoji">🇩🇪</span>
                         <div class="country-name">Deutschland (DE)</div>
                     </div>
-                    <span class="status-tag">50% Rabatt Verfügbar</span>
+                    <span class="status-tag">50% Rabatt</span>
                 </a>
 
                 <!-- ÁUSTRIA -->
@@ -207,21 +199,11 @@
                     <span class="status-tag">Auf Lager</span>
                 </a>
 
-                <!-- OUTROS PAÍSES EUROPEUS -->
-                <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7172" class="flag-btn">
-                    <div class="flag-info">
-                        <span class="flag-emoji">🇪🇺</span>
-                        <div class="country-name">Andere EU-Länder</div>
-                    </div>
-                    <span class="status-tag" style="color: #94a3b8; background: rgba(255,255,255,0.05);">Standard</span>
-                </a>
-
             </div>
 
-            <!-- Selos e Compliance -->
             <div class="security-badges">
-                <div class="security-item">🔒 256-Bit SSL Verschlüsselung</div>
-                <div class="security-item">⚡ Schneller Versand</div>
+                <span>🔒 SSL-Verschlüsselt</span>
+                <span>⚡ Express Versand</span>
             </div>
 
             <div class="footer-link">
