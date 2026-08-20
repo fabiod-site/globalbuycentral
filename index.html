@@ -9,52 +9,206 @@
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
         
-        /* Header escuro elegante ajustado para destacar a logo */
-        header { background: #080a0f; color: #fff; padding: 18px 0; border-bottom: 3px solid #d4af37; }
-        .header-content { display: flex; align-items: center; justify-content: center; gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        .site-logo { height: 58px; width: auto; object-fit: contain; }
+        body { 
+            background-color: #f8fafc; 
+            color: #1e293b; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header - Deep Navy Harmonizado */
+        header { 
+            background: #0f172a; 
+            color: #fff; 
+            padding: 16px 0; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .header-content { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 16px; 
+            max-width: 960px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .site-logo { 
+            height: 52px; 
+            width: 52px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
         .header-text { text-align: left; }
-        .header-text h1 { font-size: 22px; letter-spacing: 1.5px; line-height: 1.2; color: #ffffff; font-weight: 700; }
-        .header-text p { font-size: 13px; color: #38bdf8; margin-top: 2px; font-weight: 500; }
+        .header-text h1 { 
+            font-size: 21px; 
+            letter-spacing: 1.2px; 
+            line-height: 1.2; 
+            color: #ffffff; 
+            font-weight: 700; 
+        }
+        .header-text p { 
+            font-size: 13px; 
+            color: #38bdf8; 
+            margin-top: 2px; 
+            font-weight: 500; 
+        }
 
-        /* Welcome Banner */
-        .hero { max-width: 900px; margin: 35px auto 10px; padding: 0 20px; text-align: center; }
-        .hero h2 { font-size: 28px; color: #0f172a; }
-        .hero p { color: #64748b; font-size: 16px; margin-top: 8px; }
+        /* Hero Banner */
+        .hero { 
+            max-width: 800px; 
+            margin: 40px auto 16px; 
+            padding: 0 20px; 
+            text-align: center; 
+        }
+        .hero h2 { 
+            font-size: 32px; 
+            color: #0f172a; 
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .hero p { 
+            color: #64748b; 
+            font-size: 17px; 
+            margin-top: 10px; 
+        }
 
         /* Product Showcase */
-        .showcase { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        .product-card { background: #fff; border-radius: 12px; display: flex; flex-wrap: wrap; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; align-items: center; border: 1px solid #e2e8f0; }
+        .showcase { 
+            max-width: 900px; 
+            margin: 30px auto 50px; 
+            padding: 0 20px; 
+        }
+        .product-card { 
+            background: #ffffff; 
+            border-radius: 16px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08); 
+            overflow: hidden; 
+            align-items: center; 
+            border: 1px solid #e2e8f0; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+        }
         
-        .product-image { flex: 1; min-width: 280px; padding: 25px; text-align: center; background: #fff; }
-        .product-image img { max-width: 100%; height: auto; max-height: 250px; border-radius: 8px; object-fit: contain; }
+        .product-image { 
+            flex: 1; 
+            min-width: 280px; 
+            padding: 30px; 
+            text-align: center; 
+            background: #ffffff; 
+        }
+        .product-image img { 
+            max-width: 100%; 
+            height: auto; 
+            max-height: 260px; 
+            border-radius: 12px; 
+            object-fit: contain; 
+        }
 
-        .product-info { flex: 1; min-width: 280px; padding: 30px; }
+        .product-info { 
+            flex: 1.2; 
+            min-width: 280px; 
+            padding: 36px; 
+        }
         
-        /* Badges */
-        .badge-container { margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
-        .badge { font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; display: inline-block; }
-        .badge-discount { background: #ef4444; color: #fff; }
-        .badge-de { background: #0f172a; color: #facc15; border: 1px solid #facc15; }
+        /* Badges Suaves */
+        .badge-container { 
+            margin-bottom: 14px; 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+        }
+        .badge { 
+            font-size: 12px; 
+            font-weight: 700; 
+            padding: 6px 14px; 
+            border-radius: 30px; 
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge-discount { 
+            background: #fef2f2; 
+            color: #dc2626; 
+            border: 1px solid #fecaca;
+        }
+        .badge-de { 
+            background: #fffbe3; 
+            color: #b45309; 
+            border: 1px solid #fde68a;
+        }
 
-        .product-info h3 { font-size: 22px; color: #0f172a; margin-bottom: 10px; }
-        .product-info p { color: #475569; font-size: 14px; margin-bottom: 20px; }
+        .product-info h3 { 
+            font-size: 24px; 
+            color: #0f172a; 
+            margin-bottom: 12px; 
+            font-weight: 700;
+        }
+        .product-info p { 
+            color: #475569; 
+            font-size: 15px; 
+            margin-bottom: 24px; 
+            line-height: 1.6;
+        }
         
-        .btn-affiliate { display: inline-block; background: #16a34a; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-weight: bold; font-size: 15px; transition: background 0.3s ease; text-align: center; }
-        .btn-affiliate:hover { background: #15803d; }
+        /* Botão Principal em Azul Elétrico */
+        .btn-affiliate { 
+            display: inline-block; 
+            width: 100%;
+            background: #2563eb; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 16px 28px; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            transition: all 0.2s ease; 
+            text-align: center; 
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+        }
+        .btn-affiliate:hover { 
+            background: #1d4ed8; 
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.45);
+        }
 
-        /* Footer ajustado */
-        footer { background: #080a0f; color: #94a3b8; text-align: center; padding: 25px; margin-top: 60px; font-size: 13px; border-top: 3px solid #d4af37; }
-        footer a { color: #cbd5e1; text-decoration: none; }
-        footer a:hover { color: #38bdf8; text-decoration: underline; }
+        /* Footer */
+        footer { 
+            background: #0f172a; 
+            color: #94a3b8; 
+            text-align: center; 
+            padding: 30px 20px; 
+            margin-top: 60px; 
+            font-size: 14px; 
+            border-top: 1px solid #1e293b;
+        }
+        footer a { 
+            color: #cbd5e1; 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        footer a:hover { 
+            color: #38bdf8; 
+            text-decoration: underline; 
+        }
+
+        /* Responsivo */
+        @media (max-width: 640px) {
+            .hero h2 { font-size: 24px; }
+            .product-info { padding: 24px; }
+            .header-text h1 { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header com fundo escuro contínuo -->
+    <!-- Header com fundo Deep Navy -->
     <header>
         <div class="header-content">
             <img src="logo.png" alt="Global Buy Central Logo" class="site-logo">
@@ -68,7 +222,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <h2>Welcome to Global Buy Central</h2>
-        <p>Discover verified products and exclusive deals for your everyday life.</p>
+        <p>Discover verified products and exclusive deals curated for you.</p>
     </section>
 
     <!-- Product Showcase -->
@@ -84,7 +238,7 @@
                 </div>
                 
                 <h3>ItagPro Smart Tracker</h3>
-                <p>Never lose your keys, wallet, or valuables again. Compatible with both iOS and Android, featuring extended battery life and precise real-time location tracking.</p>
+                <p>Never lose your keys, wallet, or valuables again. Fully compatible with iOS and Android, featuring long battery life and precise real-time tracking.</p>
                 
                 <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7172" target="_blank" rel="noopener" class="btn-affiliate">
                     Check DE Offer Now &rarr;
