@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Store | Select Your Region</title>
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11505591976');
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -31,7 +41,7 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: url('official_bg.jpg') center top / cover no-repeat;
             filter: blur(8px) brightness(0.5);
-            transform: scale(1.05); /* Evita bordas brancas pelo efeito de blur */
+            transform: scale(1.05);
             z-index: 1;
         }
 
@@ -59,7 +69,7 @@
             height: 48px;
             width: auto;
             margin-bottom: 12px;
-            border-radius: Bis zu 70%;
+            border-radius: 50%; /* CORRIGIDO AQUI */
         }
 
         .modal-title {
@@ -154,15 +164,6 @@
         .footer-link a { color: #64748b; text-decoration: none; }
         .footer-link a:hover { text-decoration: underline; }
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11505591976');
-</script>
 </head>
 <body>
 
@@ -220,19 +221,20 @@
 
         </div>
     </div>
-    <!-- Script de Conversão do Clique -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll('a'); 
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-11505591976/2QupCPPwl-UcEKjNpe4q'
+
+    <!-- Script de Conversão do Clique (CORRIGIDO PARA PEGAR APENAS .flag-btn) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const flagButtons = document.querySelectorAll('.flag-btn'); 
+        
+        flagButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-11505591976/2QupCPPwl-UcEKjNpe4q'
+            });
+          });
         });
       });
-    });
-  });
-</script>
+    </script>
 </body>
 </html>
