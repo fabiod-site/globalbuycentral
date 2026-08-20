@@ -1,2 +1,0 @@
-# globalbuycentral
-Affiliate WebSite
