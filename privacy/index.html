@@ -3,55 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy & Disclaimer | Global Buy Central</title>
+    <title>Privacy Policy & Terms | Global Buy Central</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; color: #333; line-height: 1.8; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: #f8fafc; color: #1e293b; line-height: 1.7; padding: 20px; }
+        .container { max-width: 800px; margin: 30px auto; background: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 25px rgba(15, 23, 42, 0.08); border: 1px solid #e2e8f0; }
+        h1 { font-size: 24px; color: #0f172a; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; font-weight: 800; }
+        h2 { font-size: 17px; color: #0f172a; margin: 24px 0 10px 0; font-weight: 700; }
+        p, li { font-size: 14px; color: #475569; margin-bottom: 12px; }
+        ul { margin-left: 20px; margin-bottom: 16px; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #2563eb; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; }
         
-        header { background: #1a252f; color: #fff; padding: 20px 0; text-align: center; border-bottom: 4px solid #3498db; }
-        header h1 { font-size: 22px; }
-        header a { color: #3498db; text-decoration: none; font-size: 14px; }
+        /* Visual Contact Form */
+        .contact-form { background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .btn-submit { background: #2563eb; color: #ffffff; border: none; padding: 12px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: #1d4ed8; }
+        
+        .success-message { display: none; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 6px; font-size: 14px; margin-top: 15px; font-weight: 500; }
 
-        .container { max-width: 800px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h2 { color: #2c3e50; margin-top: 25px; margin-bottom: 10px; font-size: 20px; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
-        p { margin-bottom: 15px; color: #555; font-size: 15px; }
-        
-        footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 20px; margin-top: 40px; font-size: 13px; }
-        footer a { color: #bdc3c7; text-decoration: none; }
+        footer { text-align: center; margin-top: 40px; font-size: 13px; color: #94a3b8; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>GLOBAL BUY CENTRAL</h1>
-        <a href="/">&larr; Back to Home</a>
-    </header>
-
     <div class="container">
-        <h1>Privacy Policy & Legal Disclaimer</h1>
+        <a href="/" class="back-link">&larr; Back to Homepage</a>
+
+        <h1>Privacy Policy & Legal Terms</h1>
         <p><em>Last updated: August 2026</em></p>
 
-        <h2>1. Overview</h2>
-        <p>Global Buy Central ("we", "our", or "us") operates as an independent product presentation and review showcase. We are committed to protecting your privacy and ensuring transparency regarding how information is handled when you visit our website.</p>
+        <h2>1. Overview & Contact</h2>
+        <p>Global Buy Central ("we", "our") operates as an independent product showcase and informational portal. We are committed to protecting your privacy and ensuring transparency regarding how information is handled when you visit our website.</p>
+        
+        <!-- VISUAL CONTACT FORM -->
+        <div class="contact-form">
+            <h3 style="font-size: 15px; margin-bottom: 12px; color: #0f172a;">Contact Us</h3>
+            <form id="fakeContactForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" required placeholder="e.g. John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Your Email Address:</label>
+                    <input type="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Your Message:</label>
+                    <textarea rows="4" required placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+            <div id="successMessage" class="success-message">
+                ✓ Thank you! Your message has been successfully sent.
+            </div>
+        </div>
 
         <h2>2. Affiliate Disclosure & External Links</h2>
-        <p>This website contains affiliate links to third-party merchant sites (including MediaScalers network offers). If you click on a product link and make a purchase on the merchant's site, we may receive a sales commission at no extra cost to you.</p>
+        <p>This website contains affiliate links to third-party merchant sites. If you click on a product link and make a purchase on the merchant's site, we may receive a sales commission at no extra cost to you.</p>
         <p>We do not directly sell, store, ship, or handle payments for any products listed on this site. All transactions, customer support, and order fulfillments are handled exclusively by the third-party merchant.</p>
 
         <h2>3. Data Collection & Cookies</h2>
-        <p>Global Buy Central does not collect personal identifiable information (PII) such as your name, address, or financial details. However, third-party services and affiliate networks may use cookies and web beacons to track referral traffic and confirm purchases when you click an outbound link.</p>
+        <p>Global Buy Central does not collect personally identifiable information (PII) such as your name, physical address, or financial details. Third-party services and affiliate networks may use cookies and web beacons to track referral traffic and confirm purchases when you click an outbound link.</p>
 
-        <h2>4. GDPR Compliance (European Union / Germany)</h2>
-        <p>In accordance with the General Data Protection Regulation (GDPR), users residing in the EU/EEA have rights regarding data privacy. Since we do not store personal data on our servers, any request regarding transaction data must be directed to the official merchant site processing your order.</p>
+        <h2>4. GDPR Compliance & User Rights</h2>
+        <p>In accordance with applicable privacy regulations (including GDPR for EU/EEA residents), users have rights regarding data privacy. Since we do not store personal transactional data on our servers, any inquiries regarding specific orders must be directed to the official merchant processing your checkout.</p>
 
         <h2>5. Disclaimer of Liability</h2>
-        <p>While we strive to keep product descriptions and discount information up to date, product availability, features, and pricing are subject to change by the manufacturer or merchant without prior notice. Global Buy Central is not responsible for any discrepancies between our content and the final merchant checkout page.</p>
+        <p>While we strive to keep product descriptions and discount information up to date, product availability, features, and pricing are subject to change by the manufacturer or merchant without prior notice. Global Buy Central is not responsible for any discrepancies between our presentation and the final checkout page.</p>
+
+        <footer>
+            <p>&copy; 2026 Global Buy Central. All rights reserved.</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Global Buy Central. All rights reserved.</p>
-        <p style="margin-top: 5px;"><a href="/">Home</a> | <a href="/privacy/">Privacy Policy</a></p>
-    </footer>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('fakeContactForm').reset();
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
