@@ -154,6 +154,15 @@
         .footer-link a { color: #64748b; text-decoration: none; }
         .footer-link a:hover { text-decoration: underline; }
     </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11505591976');
+</script>
 </head>
 <body>
 
@@ -211,6 +220,19 @@
 
         </div>
     </div>
-
+    <!-- Script de Conversão do Clique -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('a'); 
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11505591976/2QupCPPwl-UcEKjNpe4q'
+        });
+      });
+    });
+  });
+</script>
 </body>
 </html>
