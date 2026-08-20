@@ -3,10 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Buy Central</title>
+    <title>Global Buy Central | Official Product Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        
+        /* Header */
+        header { background: #1a252f; color: #fff; padding: 20px 0; text-align: center; border-bottom: 4px solid #3498db; }
+        header h1 { font-size: 24px; letter-spacing: 1px; }
+        header p { font-size: 14px; color: #bdc3c7; margin-top: 5px; }
+
+        /* Banner de Boas-Vindas */
+        .hero { max-width: 900px; margin: 30px auto 10px; padding: 0 20px; text-align: center; }
+        .hero h2 { font-size: 28px; color: #2c3e50; }
+        .hero p { color: #7f8c8d; font-size: 16px; margin-top: 8px; }
+
+        /* Grid de Produtos / Vitrine */
+        .showcase { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .product-card { background: #fff; border-radius: 12px; display: flex; flex-wrap: wrap; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; align-items: center; }
+        
+        .product-image { flex: 1; min-width: 280px; padding: 20px; text-align: center; background: #fff; }
+        .product-image img { max-width: 100%; height: auto; max-height: 250px; border-radius: 8px; object-fit: contain; }
+
+        .product-info { flex: 1; min-width: 280px; padding: 30px; }
+        .badge { background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+        .product-info h3 { font-size: 22px; color: #2c3e50; margin-bottom: 10px; }
+        .product-info p { color: #555; font-size: 14px; margin-bottom: 20px; }
+        
+        .btn-affiliate { display: inline-block; background: #27ae60; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-weight: bold; font-size: 15px; transition: background 0.3s ease; text-align: center; }
+        .btn-affiliate:hover { background: #219150; }
+
+        /* Rodapé Obrigatório */
+        footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 25px; margin-top: 50px; font-size: 13px; }
+        footer a { color: #bdc3c7; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
-    <h1>Global Buy Central</h1>
-    <p>Website under configuration...</p>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>GLOBAL BUY CENTRAL</h1>
+        <p>Verified Products & Global Deals</p>
+    </header>
+
+    <!-- Mensagem de Boas-Vindas -->
+    <section class="hero">
+        <h2>Willkommen bei Global Buy Central</h2>
+        <p>Entdecken Sie geprüfte Produkte und exklusive Angebote für Ihren Alltag.</p>
+    </section>
+
+    <!-- Vitrine de Produtos -->
+    <section class="showcase">
+        <div class="product-card">
+            <div class="product-image">
+                <!-- Se a sua imagem no GitHub for itagpro.jpg, o src é itagpro.jpg -->
+                <img src="itagpro.jpg" alt="ItagPro Tracker">
+            </div>
+            <div class="product-info">
+                <span class="badge">Sonderangebot -50%</span>
+                <h3>ItagPro Smart Tracker</h3>
+                <p>Verlieren Sie nie wieder Ihre Schlüssel, Geldbörse oder Wertsachen. Kompatibel mit iOS und Android, lange Akkulaufzeit und präzise Ortung.</p>
+                
+                <!-- COLOQUE SEU LINK DE AFILIADO NO HREF ABAIXO -->
+                <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7172" target="_blank" class="btn-affiliate">
+                    Jetzt Angebot Prüfen &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Global Buy Central. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="#">Impressum</a> | 
+            <a href="#">Datenschutz</a> | 
+            <a href="#">Kontakt</a>
+        </p>
+    </footer>
+
 </body>
 </html>
