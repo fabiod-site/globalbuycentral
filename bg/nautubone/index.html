@@ -8,16 +8,6 @@
     <!-- Favicon via GitHub Pages -->
     <link rel="icon" type="image/png" href="https://fabiod-site.github.io/globalbuycentral/favicon.png">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-11505591976');
-    </script>
-
     <style>
         :root {
             --primary-color: #2563eb;
@@ -352,19 +342,6 @@
                 document.getElementById('progress-bar').style.width = '100%';
             }, 2000);
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const outboundBtn = document.querySelector('.outbound-link');
-            if(outboundBtn) {
-                outboundBtn.addEventListener('click', function() {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'conversion', {
-                            'send_to': 'AW-11505591976/2QupCPPwl-UcEKjNpe4q'
-                        });
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>
