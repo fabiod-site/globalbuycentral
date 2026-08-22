@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест за болки в ставите и гърба | Официална оценка</title>
     
+    <!-- Preload Prioritário da Imagem de Fundo (Carrega ANTES dos scripts e estilos pesados) -->
+    <link rel="preload" as="image" href="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png" fetchpriority="high">
+
     <!-- Favicon via GitHub Pages -->
     <link rel="icon" type="image/png" href="https://fabiod-site.github.io/globalbuycentral/favicon.png">
 
@@ -39,7 +42,7 @@
             position: relative;
         }
 
-        /* Fundo da Página Oficial via GitHub Pages */
+        /* Fundo Otimizado com Transição Suave */
         .bg-screenshot {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -48,8 +51,15 @@
             transform: scale(1.05);
             will-change: transform, filter;
             z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
+        .bg-screenshot.loaded {
+            opacity: 1;
+        }
+
+        /* O Quiz surge suavemente após o fundo carregar */
         .quiz-container {
             width: 100%;
             max-width: 520px;
@@ -60,6 +70,14 @@
             overflow: hidden;
             position: relative;
             z-index: 10;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .quiz-container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .quiz-header {
@@ -227,9 +245,9 @@
 <body>
 
     <!-- Fundo da Página Oficial -->
-    <div class="bg-screenshot"></div>
+    <div class="bg-screenshot" id="bgContainer"></div>
 
-    <div class="quiz-container">
+    <div class="quiz-container" id="quizContainer">
         <div class="quiz-header">
             <span>🛡️ Официален онлайн тест 2026</span>
         </div>
@@ -325,6 +343,24 @@
     </div>
 
     <script>
+        // Pré-carregamento dinâmico via JS para garantir sincronização
+        const bgUrl = 'https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png';
+        const img = new Image();
+        img.src = bgUrl;
+
+        function displayContent() {
+            document.getElementById('bgContainer').classList.add('loaded');
+            document.getElementById('quizContainer').classList.add('visible');
+        }
+
+        if (img.complete) {
+            displayContent();
+        } else {
+            img.onload = displayContent;
+            // Fallback de segurança para exibir em 800ms caso a conexão do usuário esteja lenta
+            setTimeout(displayContent, 800);
+        }
+
         function nextStep(stepNumber, progressPercent) {
             document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
             document.getElementById('step-' + stepNumber).classList.add('active');
