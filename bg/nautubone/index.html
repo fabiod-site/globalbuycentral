@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест за болки в ставите и гърба | Официална оценка</title>
     
-    <!-- Preload Prioritário da Imagem de Fundo e Imagem do Produto -->
+    <!-- Google Tag (gtag.js) - Tag Global -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11505591976');
+    </script>
+
+    <!-- Preload Prioritário das Imagens -->
     <link rel="preload" as="image" href="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png" fetchpriority="high">
     <link rel="preload" as="image" href="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/nautubone.png">
 
-    <!-- Favicon via GitHub Pages -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://fabiod-site.github.io/globalbuycentral/favicon.png">
 
     <style>
@@ -320,7 +330,6 @@
                 </div>
 
                 <div class="product-box">
-                    <!-- Imagem do Produto no Novo Caminho -->
                     <img src="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/nautubone.png" alt="Nautubone Gel" class="product-img" width="180" height="180" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x180?text=Nautubone+Gel';">
                     
                     <h3 style="font-size: 18px; margin-bottom: 6px;">Nautubone Гел</h3>
@@ -330,8 +339,8 @@
                         🔥 Промоционална цена: 39 EUR <span style="text-decoration: line-through; color: #94a3b8; font-size: 13px;">78 EUR</span> (-50%)
                     </div>
 
-                    <!-- Link de Afiliado -->
-                    <a href="https://nautubone_bg.doctorbuyer.com/l" class="cta-btn outbound-link">
+                    <!-- Link de Afiliado com Rastreamento de Conversão -->
+                    <a href="https://nautubone_bg.doctorbuyer.com/l" class="cta-btn outbound-link" onclick="trackConversion(event, 'https://nautubone_bg.doctorbuyer.com/l')">
                         ПОРЪЧАЙ С 50% ОТСТЪПКА
                     </a>
                 </div>
@@ -345,6 +354,24 @@
     </div>
 
     <script>
+        // Função para disparar a conversão no clique e redirecionar
+        function trackConversion(e, url) {
+            if (typeof gtag !== 'undefined') {
+                e.preventDefault();
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-11505591976/Q1ijCMnoiuYcEKjNpe4q',
+                    'event_callback': function() {
+                        window.location.href = url;
+                    }
+                });
+                // Fallback caso o callback demore mais que 500ms
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 500);
+            }
+        }
+
+        // Carregamento dinamico da imagem de fundo
         const bgUrl = 'https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png';
         const img = new Image();
         img.src = bgUrl;
