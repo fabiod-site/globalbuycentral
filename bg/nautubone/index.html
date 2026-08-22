@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест за болки в ставите и гърба | Официална оценка</title>
     
-    <!-- Google Tag (gtag.js) - Tag Global -->
+    <!-- Google Tag (gtag.js) - Google Ads & Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
+      // Google Ads
       gtag('config', 'AW-11505591976');
+      // Google Analytics 4
+      gtag('config', 'G-3HPFV5JSHQ');
     </script>
 
     <!-- Preload Prioritário das Imagens -->
@@ -354,7 +357,6 @@
     </div>
 
     <script>
-        // Função para disparar a conversão no clique e redirecionar
         function trackConversion(e, url) {
             if (typeof gtag !== 'undefined') {
                 e.preventDefault();
@@ -364,14 +366,12 @@
                         window.location.href = url;
                     }
                 });
-                // Fallback caso o callback demore mais que 500ms
                 setTimeout(function() {
                     window.location.href = url;
                 }, 500);
             }
         }
 
-        // Carregamento dinamico da imagem de fundo
         const bgUrl = 'https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png';
         const img = new Image();
         img.src = bgUrl;
