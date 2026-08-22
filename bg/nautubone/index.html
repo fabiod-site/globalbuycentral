@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест за болки в ставите и гърба | Официална оценка</title>
     
-    <!-- Preload Prioritário da Imagem de Fundo (Carrega ANTES dos scripts e estilos pesados) -->
+    <!-- Preload Prioritário da Imagem de Fundo e Imagem do Produto -->
     <link rel="preload" as="image" href="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png" fetchpriority="high">
+    <link rel="preload" as="image" href="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/nautubone.png">
 
     <!-- Favicon via GitHub Pages -->
     <link rel="icon" type="image/png" href="https://fabiod-site.github.io/globalbuycentral/favicon.png">
@@ -59,7 +60,6 @@
             opacity: 1;
         }
 
-        /* O Quiz surge suavemente após o fundo carregar */
         .quiz-container {
             width: 100%;
             max-width: 520px;
@@ -320,7 +320,8 @@
                 </div>
 
                 <div class="product-box">
-                    <img src="https://fabiod-site.github.io/globalbuycentral/nautubone.png" alt="Nautubone Gel" class="product-img" width="180" height="180" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x180?text=Nautubone+Gel';">
+                    <!-- Imagem do Produto no Novo Caminho -->
+                    <img src="https://fabiod-site.github.io/globalbuycentral/bg/nautubone/nautubone.png" alt="Nautubone Gel" class="product-img" width="180" height="180" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x180?text=Nautubone+Gel';">
                     
                     <h3 style="font-size: 18px; margin-bottom: 6px;">Nautubone Гел</h3>
                     <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Формула за успокояване на дискомфорта и подкрепа на подвижността.</p>
@@ -329,6 +330,7 @@
                         🔥 Промоционална цена: 39 EUR <span style="text-decoration: line-through; color: #94a3b8; font-size: 13px;">78 EUR</span> (-50%)
                     </div>
 
+                    <!-- Link de Afiliado -->
                     <a href="https://nautubone_bg.doctorbuyer.com/l" class="cta-btn outbound-link">
                         ПОРЪЧАЙ С 50% ОТСТЪПКА
                     </a>
@@ -343,7 +345,6 @@
     </div>
 
     <script>
-        // Pré-carregamento dinâmico via JS para garantir sincronização
         const bgUrl = 'https://fabiod-site.github.io/globalbuycentral/bg/nautubone/bg_nautubone.png';
         const img = new Image();
         img.src = bgUrl;
@@ -357,7 +358,6 @@
             displayContent();
         } else {
             img.onload = displayContent;
-            // Fallback de segurança para exibir em 800ms caso a conexão do usuário esteja lenta
             setTimeout(displayContent, 800);
         }
 
