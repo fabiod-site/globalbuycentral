@@ -8,7 +8,22 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/fabiod-site/globalbuycentral/main/favicon.png">
     
-    <!-- Cole seus scripts de rastreamento aqui (GTM, Clarity, Analytics, etc.) -->
+    <!-- Bemob Tracking Scripts -->
+    <script type="text/javascript">
+    function bemobCb(params) {
+        var t = params.trackingDomain+'/click/';
+        var re = new RegExp(t+'?(\\d*)');
+        var e = document.querySelectorAll('a[href*="'+t+'"]');
+        for (var i = 0; i < e.length; i++) {
+            var ex = re.exec(e[i].href);
+            if (ex) {
+                e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+            }
+        }
+    }
+    </script>
+    <script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://7gmo6.bemobtrcks.com/landing/bed869dc-43e7-40e2-99cf-2fe228bd8aa6?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://7gmo6.bemobtrcks.com/landing/bed869dc-43e7-40e2-99cf-2fe228bd8aa6?rule=1&path=1&landing=1" alt=""></noscript>
+    <!-- Fim Bemob Tracking Scripts -->
 
     <style>
         * { 
@@ -24,7 +39,7 @@
             justify-content: center;
             min-height: 100vh;
             background-color: #e9ecef;
-            overflow: hidden; /* Evita rolagem desnecessária no mobile */
+            overflow: hidden; 
             position: relative;
         }
 
@@ -38,10 +53,10 @@
             min-width: 100%;
             min-height: 100%;
             -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); /* Força o alinhamento central absoluto */
+            transform: translate(-50%, -50%);
             background-image: url('https://raw.githubusercontent.com/fabiod-site/globalbuycentral/main/de/froza_ac/Froza_bg.png');
             background-size: cover;
-            background-position: center center; /* Garante que o centro da imagem nunca saia de vista */
+            background-position: center center;
             background-repeat: no-repeat;
             z-index: -2;
         }
@@ -82,14 +97,13 @@
         }
 
         h1 { 
-            font-size: 24px; /* Ajuste fino de tipografia */
+            font-size: 24px; 
             color: #1a1d20; 
             margin-bottom: 12px; 
             font-weight: 700; 
             line-height: 1.2;
         }
         
-        /* Ajuste para telas muito pequenas */
         @media (max-width: 360px) {
             h1 { font-size: 20px; }
             p { font-size: 14px; }
@@ -107,7 +121,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 56px; /* Área de toque otimizada */
+            min-height: 56px; 
             margin-bottom: 12px;
             font-size: 18px;
             font-weight: 600;
@@ -116,8 +130,6 @@
             border: none;
             border-radius: 10px;
             text-decoration: none;
-            transition: -webkit-transform 0.2s ease, background-color 0.2s ease;
-            transition: transform 0.2s ease, background-color 0.2s ease;
             transition: transform 0.2s ease, background-color 0.2s ease, -webkit-transform 0.2s ease;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
@@ -125,7 +137,7 @@
 
         .btn:active { 
             -webkit-transform: scale(0.97); 
-            transform: scale(0.97); /* Efeito de clique no mobile */
+            transform: scale(0.97); 
         }
         
         /* Botões Específicos */
@@ -142,8 +154,6 @@
     </style>
 </head>
 <body>
-    <!-- GTM (noscript) aqui, se aplicável -->
-    
     <div class="bg-image"></div>
     <div class="overlay"></div>
     
@@ -151,13 +161,13 @@
         <h1>Wählen Sie Ihr Lieferland</h1>
         <p>Bitte wählen Sie Ihr Land aus, um fortzufahren und Ihr Gerät zu bestellen.</p>
 
-        <!-- Botão Alemanha -->
-        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn btn-deutschland">
+        <!-- Botão Alemanha com Click URL Bemob -->
+        <a href="https://7gmo6.bemobtrcks.com/click/1?ns=c%3Dbed869dc-43e7-40e2-99cf-2fe228bd8aa6..l%3D2..a%3D0..b%3D0" class="btn btn-deutschland">
             <span class="flag">🇩🇪</span> Deutschland
         </a>
 
-        <!-- Botão Áustria -->
-        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn btn-austria">
+        <!-- Botão Áustria com Click URL Bemob -->
+        <a href="https://7gmo6.bemobtrcks.com/click/1?ns=c%3Dbed869dc-43e7-40e2-99cf-2fe228bd8aa6..l%3D2..a%3D0..b%3D0" class="btn btn-austria">
             <span class="flag">🇦🇹</span> Österreich
         </a>
     </div>
