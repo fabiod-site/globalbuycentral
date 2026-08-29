@@ -1,49 +1,32 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Versandgebiet auswählen</title>
+    <title>Wählen Sie Ihr Lieferland - Mobiles Klimagerät</title>
     
-    <!-- Insira seus scripts de rastreamento aqui (Google Tag Manager, Microsoft Clarity, Analytics, etc) -->
-    
+    <!-- Cole seus scripts de rastreamento aqui (GTM, Clarity, Analytics) -->
+
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #e9ecef;
-        }
-        .bg-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body {
+            /* Imagem de fundo apontando para o arquivo RAW no GitHub */
             background-image: url('https://raw.githubusercontent.com/fabiod-site/globalbuycentral/main/de/froza_ac/Froza_bg.png');
             background-size: cover;
             background-position: center;
-            filter: blur(6px);
-            transform: scale(1.05); /* Evita bordas brancas após o desfoque */
-            z-index: -1;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #e9ecef;
         }
         .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Escurece o fundo para destacar o menu */
         }
         .container {
             position: relative;
-            z-index: 1;
             background: #ffffff;
             padding: 40px 30px;
             border-radius: 12px;
@@ -51,107 +34,50 @@ html_content = """<!DOCTYPE html>
             text-align: center;
             max-width: 400px;
             width: 90%;
+            z-index: 1;
         }
-        h1 {
-            font-size: 22px;
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .btn-country {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-        .btn-country:hover {
-            background: #e2e6ea;
-            border-color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,123,255,0.15);
-        }
-        .btn-country span.flag {
-            font-size: 24px;
-        }
-        .btn-country span.status {
-            font-size: 12px;
-            color: #28a745;
-            font-weight: normal;
-            background: #e6f4ea;
-            padding: 4px 8px;
-            border-radius: 12px;
-        }
-        .btn-country.ch span.status {
-            color: #fd7e14;
-            background: #fff3cd;
-        }
-        .secure-badge {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #999;
+        h1 { font-size: 22px; color: #212529; margin-bottom: 10px; font-weight: 700; }
+        p { font-size: 15px; color: #6c757d; margin-bottom: 30px; }
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #212529; /* Cor base preta elegante */
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
         }
+        .btn:hover { background-color: #343a40; transform: translateY(-2px); }
+        .btn-austria { background-color: #dc3545; /* Vermelho escuro para diferenciar Áustria */ }
+        .btn-austria:hover { background-color: #c82333; }
+        .flag { margin-right: 12px; font-size: 24px; }
     </style>
 </head>
 <body>
-    <div class="bg-image"></div>
-    <div class="overlay"></div>
+    <!-- GTM (noscript) aqui -->
     
+    <div class="overlay"></div>
     <div class="container">
-        <h1>Lieferland bestätigen</h1>
-        <p>Aufgrund der hohen Nachfrage im Sommer wählen Sie bitte Ihr Land aus, um die Verfügbarkeit und den Versand zu überprüfen.</p>
-        
-        <!-- Deutschland -->
-        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn-country">
-            <span class="flag">🇩🇪</span>
-            Deutschland
-            <span class="status">Auf Lager</span>
-        </a>
-        
-        <!-- Österreich -->
-        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn-country">
-            <span class="flag">🇦🇹</span>
-            Österreich
-            <span class="status">Auf Lager</span>
-        </a>
-        
-        <!-- Schweiz -->
-        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn-country ch">
-            <span class="flag">🇨🇭</span>
-            Schweiz
-            <span class="status">Begrenzter Bestand</span>
+        <h1>Wählen Sie Ihr Lieferland</h1>
+        <p>Bitte wählen Sie Ihr Land aus, um fortzufahren und Ihr Gerät zu bestellen.</p>
+
+        <!-- Botão Alemanha -->
+        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn">
+            <span class="flag">🇩🇪</span> Deutschland
         </a>
 
-        <div class="secure-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            Sichere Verbindung
-        </div>
+        <!-- Botão Áustria -->
+        <a href="https://www.clickrtrckr.com/KSBH2JX/6CK33D9/?uid=8900" class="btn btn-austria">
+            <span class="flag">🇦🇹</span> Österreich
+        </a>
     </div>
 </body>
-</html>"""
-
-with open("/mnt/data/index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("HTML gerado com sucesso!")
+</html>
