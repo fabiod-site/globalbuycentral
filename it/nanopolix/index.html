@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selezione Paese - NanoPolix</title>
+    
+    <!-- FAVICON DA SUA LOJA -->
+    <link rel="icon" href="https://raw.githubusercontent.com/fabiod-site/globalbuycentral/main/favicon.png" type="image/png">
 
+    <style>
+        /* RESET E BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        
+        body { 
+            /* FUNDO DO SEU GITHUB (Formato Raw para funcionar como imagem) */
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), 
+                        url('https://raw.githubusercontent.com/fabiod-site/globalbuycentral/main/it/nanopolix/nanopolix_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* CARD CENTRAL (Efeito de Vidro / Glassmorphism) */
+        .gateway-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .gateway-card h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .gateway-card p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* GRID DE PAÍSES */
+        .country-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .country-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .country-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .country-flag {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* BOTÃO DA ITÁLIA (LIBERADO E CLICÁVEL) */
+        .country-btn.italy {
+            background: linear-gradient(135deg, #009246, #007a3a);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 146, 70, 0.4);
+        }
+
+        .country-btn.italy:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 146, 70, 0.6);
+        }
+
+        .italy-badge {
+            background: #fff;
+            color: #009246;
+            font-size: 11px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* BOTÕES BLOQUEADOS */
+        .country-btn.disabled {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.4);
+            cursor: not-allowed;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .country-btn.disabled .status {
+            font-size: 12px;
+            font-weight: 500;
+            background: rgba(0,0,0,0.2);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        /* MENSAGEM DE SITE SEGURO NO RODAPÉ */
+        .secure-badge {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .secure-badge span {
+            font-size: 18px;
+        }
+
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 480px) {
+            .gateway-card { padding: 30px 20px; }
+            .gateway-card h1 { font-size: 22px; }
+            .country-btn { padding: 14px 16px; font-size: 16px; }
+            .country-flag { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gateway-card">
+        <h1>Seleziona il tuo Paese</h1>
+        <p>Per garantirti l'offerta corretta e la spedizione, seleziona la tua nazione di residenza.</p>
+        
+        <div class="country-grid">
+            <!-- ITÁLIA: LINK DIRETO DE AFILIADO -->
+            <a href="https://www.clickrtrckr.com/KSBH2JX/8SXT11N/?uid=15691" class="country-btn italy" target="_blank" rel="noopener noreferrer">
+                <div class="country-left">
+                    <span class="country-flag">🇮🇹</span> 
+                    <span>Italia</span>
+                </div>
+                <span class="italy-badge">Disponibile</span>
+            </a>
+
+            <!-- PAÍSES BLOQUEADOS (APENAS VISUAL) -->
+            <div class="country-btn disabled">
+                <div class="country-left">
+                    <span class="country-flag">🇪🇸</span> 
+                    <span>Spagna</span>
+                </div>
+                <span class="status">Non disponibile</span>
+            </div>
+            
+            <div class="country-btn disabled">
+                <div class="country-left">
+                    <span class="country-flag">🇫🇷</span> 
+                    <span>Francia</span>
+                </div>
+                <span class="status">Non disponibile</span>
+            </div>
+            
+            <div class="country-btn disabled">
+                <div class="country-left">
+                    <span class="country-flag">🇩🇪</span> 
+                    <span>Germania</span>
+                </div>
+                <span class="status">Non disponibile</span>
+            </div>
+            
+            <div class="country-btn disabled">
+                <div class="country-left">
+                    <span class="country-flag">🇵🇹</span> 
+                    <span>Portogallo</span>
+                </div>
+                <span class="status">Non disponibile</span>
+            </div>
+        </div>
+
+        <!-- MENSAGEM DE SEGURANÇA -->
+        <div class="secure-badge">
+            <span>🔒</span> Sito Ufficiale Sicuro e Verificato
+        </div>
+    </div>
+
+</body>
+</html>
