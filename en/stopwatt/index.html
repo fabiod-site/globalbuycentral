@@ -12,7 +12,7 @@
 
 <!-- Preload da imagem LCP (crítica) -->
 <link rel="preload" as="image" href="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/homem_segurando.webp" fetchpriority="high">
-<link rel="preload" as="image" href="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/produto.png">
+<link rel="preload" as="image" href="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/produto.webp">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://fabiod-site.github.io/globalbuycentral/favicon.png">
@@ -27,9 +27,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </script>
 
 <style>
-/* ============================================
-   VARIÁVEIS E RESET (Design System)
-   ============================================ */
 :root {
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
@@ -72,9 +69,6 @@ body {
   padding: 0 20px;
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
 .site-header {
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--border);
@@ -107,9 +101,6 @@ body {
 
 .logo-text::before { content: "⚡"; font-size: 1.2em; }
 
-/* ============================================
-   BOTÕES CTA (REFINADOS E CHAMATIVOS)
-   ============================================ */
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -148,7 +139,6 @@ body {
   transform: translateX(4px);
 }
 
-/* Animação sutil de pulso para o CTA principal */
 .cta-pulse {
   animation: pulse-green 2.5s infinite;
 }
@@ -180,9 +170,6 @@ body {
 .cta-container { text-align: center; margin: 40px 0; padding: 0 10px; }
 .cta-subtext { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-weight: 500; }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
 .hero {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
   padding: 50px 0 40px;
@@ -289,9 +276,6 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-/* ============================================
-   CONTEÚDO PRINCIPAL
-   ============================================ */
 .content { background: var(--card); padding: 40px 0; }
 
 .content h2 {
@@ -340,9 +324,6 @@ body {
   font-style: italic;
 }
 
-/* ============================================
-   FEATURE ROW (TEXTO + IMAGEM)
-   ============================================ */
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -352,9 +333,6 @@ body {
 }
 .feature-row .content-image { margin: 0; box-shadow: var(--shadow-md); }
 
-/* ============================================
-   INFO BOX & PROS/CONS
-   ============================================ */
 .info-box {
   background: #f0f9ff;
   border-left: 4px solid var(--primary);
@@ -385,9 +363,6 @@ body {
 .pros li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 700; }
 .cons li::before { content: "✗"; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
 
-/* ============================================
-   TESTIMONIAL & FAQ
-   ============================================ */
 .testimonial {
   background: #fffbeb;
   border-left: 4px solid var(--warning);
@@ -417,9 +392,6 @@ body {
 .faq-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
 .faq-item p { color: var(--text-muted); margin: 0; font-size: 15px; }
 
-/* ============================================
-   FOOTER & DISCLAIMER
-   ============================================ */
 .simple-footer {
   background: #f1f5f9;
   padding: 30px 20px;
@@ -440,9 +412,6 @@ body {
   line-height: 1.6;
 }
 
-/* ============================================
-   RESPONSIVIDADE (MOBILE FIRST)
-   ============================================ */
 @media (max-width: 768px) {
   .feature-row, .pros-cons { grid-template-columns: 1fr; gap: 20px; }
   .hero { padding: 40px 0 30px; }
@@ -459,7 +428,7 @@ body {
 <header class="site-header">
   <div class="container header-content">
     <a href="#" class="logo-text">STOPWATT REVIEW</a>
-    <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/" class="header-cta" target="_blank" rel="noopener noreferrer">Check Pricing</a>
+    <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/?uid=5603" class="header-cta">Check Pricing</a>
   </div>
 </header>
 
@@ -528,7 +497,7 @@ body {
         </div>
       </div>
       <div>
-        <img src="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/instalacao.png" 
+        <img src="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/instalacao.webp" 
              alt="StopWatt installation diagram" 
              class="content-image" 
              width="400" 
@@ -542,7 +511,7 @@ body {
     <p>Now, I'm not an electrician. I don't fully understand all the technical details. But what I do understand is results. And after 90 days of using StopWatt, I have some things to share.</p>
 
     <div class="cta-container">
-      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/" class="cta-button cta-pulse" target="_blank" rel="noopener noreferrer">Check Current Price & Availability</a>
+      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/?uid=5603" class="cta-button cta-pulse">Check Current Price & Availability</a>
       <p class="cta-subtext">✓ 30-Day Money Back Guarantee • ✓ Secure Checkout</p>
     </div>
 
@@ -576,7 +545,7 @@ body {
     <p>One thing I appreciated was the build quality. It's compact, doesn't block adjacent outlets, and has a subtle LED indicator that lets you know it's working without being distracting.</p>
     
     <div style="text-align: center; margin: 30px 0;">
-      <img src="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/produto.png" 
+      <img src="https://github.com/fabiod-site/globalbuycentral/raw/main/en/stopwatt/produto.webp" 
            alt="StopWatt device close-up" 
            width="300" 
            height="300"
@@ -641,7 +610,7 @@ body {
     </div>
 
     <div class="cta-container">
-      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/" class="cta-button cta-pulse" target="_blank" rel="noopener noreferrer">Get StopWatt Now - Claim Discount</a>
+      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/?uid=5603" class="cta-button cta-pulse">Get StopWatt Now - Claim Discount</a>
       <p class="cta-subtext">✓ Secure Checkout • ✓ 30-Day Guarantee</p>
     </div>
 
@@ -651,20 +620,19 @@ body {
     <p>For me, saving $30/month means the device pays for itself in about 2 months. After that, it's essentially free money. And the peace of mind knowing I'm not wasting energy? That's valuable too.</p>
     <p>If you're on the fence, I'd say: try it. The guarantee means there's no real risk. Worst case, you return it. Best case, you start saving money every month.</p>
 
-    <!-- DISCLAIMER ATUALIZADO -->
     <div class="disclaimer-box">
       <strong>Disclaimer:</strong> Results may vary. The savings described in this review are based on my personal experience and may not be typical. Factors such as home size, number of appliances, local electricity rates, and usage patterns can all affect results. StopWatt is a legitimate product and not a scam. This review represents my honest opinion as a verified buyer.
     </div>
 
     <div class="cta-container">
-      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/" class="cta-button" target="_blank" rel="noopener noreferrer">Visit Official Website to Order</a>
+      <a href="https://www.coralstate.com/37NJMT76/X1WLPJ6/?uid=5603" class="cta-button">Visit Official Website to Order</a>
       <p class="cta-subtext">Join thousands of satisfied customers reducing their energy bills</p>
     </div>
 
   </div>
 </main>
 
-<!-- Simple Footer (Sem menção a afiliados) -->
+<!-- Simple Footer -->
 <footer class="simple-footer">
   <div class="container">
     <p>© 2026 StopWatt Review. All Rights Reserved.</p>
