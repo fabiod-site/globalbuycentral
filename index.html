@@ -3,257 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Buy Central | Official Product Hub</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
-
+    <meta name="description" content="Global Buy Central - Verified products and global deals. Find the best offers on trackers, personal care, cleaning kits, and more.">
+    <meta name="keywords" content="affiliate, global offers, verified products, deals, tracker, joint cream, car cleaning kit, ergonomic pillow">
+    <meta name="author" content="Global Buy Central">
+    <meta property="og:title" content="Global Buy Central - Global Deals">
+    <meta property="og:description" content="Verified products and global offers for you.">
+    <meta property="og:type" content="website">
+    <title>Global Buy Central - Global Deals</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
-        
-        body { 
-            background-color: #f8fafc; 
-            color: #1e293b; 
-            line-height: 1.6; 
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        /* Header - Deep Navy Harmonizado */
-        header { 
-            background: #0f172a; 
-            color: #fff; 
-            padding: 16px 0; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-        }
-        .header-content { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 16px; 
-            max-width: 960px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-        .site-logo { 
-            height: 52px; 
-            width: 52px; 
-            border-radius: 70%; 
-            object-fit: cover; 
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-        }
-        .header-text { text-align: left; }
-        .header-text h1 { 
-            font-size: 21px; 
-            letter-spacing: 1.2px; 
-            line-height: 1.2; 
-            color: #ffffff; 
-            font-weight: 700; 
-        }
-        .header-text p { 
-            font-size: 13px; 
-            color: #38bdf8; 
-            margin-top: 2px; 
-            font-weight: 500; 
+        /* ===== Variables & Reset ===== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #f59e0b;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+            --radius: 12px;
         }
 
-        /* Hero Banner */
-        .hero { 
-            max-width: 800px; 
-            margin: 40px auto 16px; 
-            padding: 0 20px; 
-            text-align: center; 
-        }
-        .hero h2 { 
-            font-size: 32px; 
-            color: #0f172a; 
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .hero p { 
-            color: #64748b; 
-            font-size: 17px; 
-            margin-top: 10px; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Product Showcase */
-        .showcase { 
-            max-width: 900px; 
-            margin: 30px auto 50px; 
-            padding: 0 20px; 
-        }
-        .product-card { 
-            background: #ffffff; 
-            border-radius: 16px; 
-            display: flex; 
-            flex-wrap: wrap; 
-            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08); 
-            overflow: hidden; 
-            align-items: center; 
-            border: 1px solid #e2e8f0; 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .product-card:hover {
-            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
-        }
-        
-        .product-image { 
-            flex: 1; 
-            min-width: 280px; 
-            padding: 30px; 
-            text-align: center; 
-            background: #ffffff; 
-        }
-        .product-image img { 
-            max-width: 100%; 
-            height: auto; 
-            max-height: 260px; 
-            border-radius: 12px; 
-            object-fit: contain; 
+        html {
+            scroll-behavior: smooth;
         }
 
-        .product-info { 
-            flex: 1.2; 
-            min-width: 280px; 
-            padding: 36px; 
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
         }
-        
-        /* Badges Suaves */
-        .badge-container { 
-            margin-bottom: 14px; 
-            display: flex; 
-            gap: 10px; 
-            flex-wrap: wrap; 
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .badge { 
-            font-size: 12px; 
-            font-weight: 700; 
-            padding: 6px 14px; 
-            border-radius: 30px; 
-            display: inline-flex;
+
+        /* ===== Header ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
             align-items: center;
-            gap: 6px;
-        }
-        .badge-discount { 
-            background: #fef2f2; 
-            color: #dc2626; 
-            border: 1px solid #fecaca;
-        }
-        .badge-de { 
-            background: #fffbe3; 
-            color: #b45309; 
-            border: 1px solid #fde68a;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .product-info h3 { 
-            font-size: 24px; 
-            color: #0f172a; 
-            margin-bottom: 12px; 
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0 0h100v100H0z" fill="none"/><path d="M50 50l20 20-20 20-20-20z" fill="rgba(255,255,255,0.1)"/><path d="M50 50L30 30l20-20 20 20z" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+            background-color: #d97706;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 28px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== Products Section ===== */
+        .products {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            height: 220px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-icon {
+            font-size: 80px;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-icon {
+            transform: scale(1.1);
+        }
+
+        .country-flag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
             font-weight: 700;
         }
-        .product-info p { 
-            color: #475569; 
-            font-size: 15px; 
-            margin-bottom: 24px; 
-            line-height: 1.6;
+
+        .product-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-        
-        /* Botão Principal em Azul Elétrico */
-        .btn-affiliate { 
-            display: inline-block; 
+
+        .product-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-category {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-desc {
+            margin-bottom: 20px;
+            color: #4b5563;
+            flex-grow: 1;
+        }
+
+        .btn-product {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
             width: 100%;
-            background: #2563eb; 
-            color: #ffffff; 
-            text-decoration: none; 
-            padding: 16px 28px; 
-            border-radius: 10px; 
-            font-weight: 700; 
-            font-size: 16px; 
-            transition: all 0.2s ease; 
-            text-align: center; 
-            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
-        }
-        .btn-affiliate:hover { 
-            background: #1d4ed8; 
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.45);
         }
 
-        /* Footer */
-        footer { 
-            background: #0f172a; 
-            color: #94a3b8; 
-            text-align: center; 
-            padding: 30px 20px; 
-            margin-top: 60px; 
-            font-size: 14px; 
-            border-top: 1px solid #1e293b;
+        .btn-product:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
         }
-        footer a { 
-            color: #cbd5e1; 
-            text-decoration: none; 
+
+        /* ===== Trust Badges Section ===== */
+        .trust-badges {
+            background-color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: #f8fafc;
+            border-radius: 50px;
             font-weight: 500;
-        }
-        footer a:hover { 
-            color: #38bdf8; 
-            text-decoration: underline; 
+            color: var(--dark);
+            box-shadow: var(--shadow);
         }
 
-        /* Responsivo */
-        @media (max-width: 640px) {
-            .hero h2 { font-size: 24px; }
-            .product-info { padding: 24px; }
-            .header-text h1 { font-size: 18px; }
+        .badge-icon {
+            font-size: 20px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 40px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            background-color: #111827;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== Accessibility ===== */
+        :focus {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header com fundo Deep Navy -->
     <header>
-        <div class="header-content">
-            <img src="logo.png" alt="Global Buy Central Logo" class="site-logo">
-            <div class="header-text">
-                <h1>GLOBAL BUY CENTRAL</h1>
-                <p>Verified Products & Global Deals</p>
+        <div class="container header-content">
+            <div>
+                <div class="logo">Global Buy <span>Central</span></div>
+                <div class="tagline">Verified Products & Global Deals</div>
             </div>
+            <nav aria-label="Main navigation">
+                <a href="#products" class="btn btn-outline" style="padding: 8px 20px; font-size: 14px;">View Offers</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h2>Welcome to Global Buy Central</h2>
-        <p>Discover verified products and exclusive deals curated for you.</p>
+        <div class="container hero-content">
+            <h1 class="animated">Discover Verified Products with Exclusive Global Offers</h1>
+            <p class="animated delay-1">We select the best global products with incredible discounts for you. Take advantage while these offers last!</p>
+            <a href="#products" class="btn animated delay-2">View Exclusive Offers</a>
+        </div>
     </section>
 
-    <!-- Product Showcase -->
-    <section class="showcase">
-        <div class="product-card">
-            <div class="product-image">
-                <img src="itagpro.jpg" alt="ItagPro Smart Tracker">
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Offers</h2>
             </div>
-            <div class="product-info">
-                <div class="badge-container">
-                    <span class="badge badge-discount">Special Offer -70% OFF</span>
-                    <span class="badge badge-de">🇩🇪 Germany (DE) Deal</span>
-                </div>
-                
-                <h3>ItagPro Smart Tracker</h3>
-                <p>Never lose your keys, wallet, or valuables again. Fully compatible with iOS and Android, featuring long battery life and precise real-time tracking.</p>
-                
-                <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7172" target="_blank" rel="noopener" class="btn-affiliate">
-                    Check DE Offer Now &rarr;
-                </a>
+            <div class="products-grid">
+                <!-- Product 1: ItagPro -->
+                <article class="product-card animated">
+                    <div class="product-image">
+                        <span class="country-flag">🇩🇪 Germany</span>
+                        <span class="discount-badge">-70%</span>
+                        <div class="product-icon">📱</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Smart Tracker</div>
+                        <h3 class="product-title">ItagPro Smart Tracker</h3>
+                        <p class="product-desc">Never lose your keys, wallet, or valuables again. Compatible with iOS and Android, featuring long battery life and precise real-time tracking.</p>
+                        <a href="https://www.clickrtrckr.com/KSBH2JX/538JDMT/?uid=7178" class="btn-product" target="_blank" rel="noopener">View Germany Offer</a>
+                    </div>
+                </article>
+
+                <!-- Product 2: Nautubone -->
+                <article class="product-card animated delay-1">
+                    <div class="product-image">
+                        <span class="country-flag">🇧🇬 Bulgaria</span>
+                        <span class="discount-badge">Special Offer</span>
+                        <div class="product-icon">🦴</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Joint Cream</div>
+                        <h3 class="product-title">Nautubone</h3>
+                        <p class="product-desc">Relief for joint pain with an advanced formula. Ideal for those seeking mobility and comfort in daily life. Exclusive offer for Bulgaria.</p>
+                        <a href="https://nautubone_bg.doctorbuyer.com/l" class="btn-product" target="_blank" rel="noopener">View Bulgaria Offer</a>
+                    </div>
+                </article>
+
+                <!-- Product 3: NanoPolix -->
+                <article class="product-card animated delay-2">
+                    <div class="product-image">
+                        <span class="country-flag">🇮🇹 Italy</span>
+                        <span class="discount-badge">Special Deal</span>
+                        <div class="product-icon">🚗</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Car Cleaning Kit</div>
+                        <h3 class="product-title">NanoPolix</h3>
+                        <p class="product-desc">Complete car cleaning kit with advanced technology to make your vehicle shine. Easy to use with professional results.</p>
+                        <a href="https://www.clickrtrckr.com/KSBH2JX/8SXT11N/?uid=15691" class="btn-product" target="_blank" rel="noopener">View Italy Offer</a>
+                    </div>
+                </article>
+
+                <!-- Product 4: Melara Pillow -->
+                <article class="product-card animated delay-3">
+                    <div class="product-image">
+                        <span class="country-flag">🇲🇾 Malaysia</span>
+                        <span class="discount-badge">4.7★</span>
+                        <div class="product-icon">🛏️</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Ergonomic Pillow</div>
+                        <h3 class="product-title">Melara Air Pillow</h3>
+                        <p class="product-desc">Adjustable ergonomic pillow for better cervical alignment. Ideal for side and back sleepers. Rated 4.7/5 by customers.</p>
+                        <a href="https://www.coralstate.com/37NJMT76/22SJB3TJ/" class="btn-product" target="_blank" rel="noopener">View Malaysia Offer</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="trust-badges">
+        <div class="container">
+            <h2>Why Shop With Us?</h2>
+            <div class="badges-container">
+                <div class="badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>100% Secure Purchase</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">⚡</span>
+                    <span>Flash Offers</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span>Verified Products</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🚚</span>
+                    <span>Fast Delivery</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">↩</span>
+                    <span>Return Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Global Buy Central. All rights reserved.</p>
-        <p style="margin-top: 10px;">
-            <a href="/privacy/">Terms & Privacy Policy</a>
-        </p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Global Buy Central</h4>
+                    <p>Discover verified products and global offers selected especially for you.</p>
+                    <p>Offers updated regularly with exclusive discounts.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Featured Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">ItagPro Smart Tracker</a></li>
+                        <li><a href="#products">Nautubone</a></li>
+                        <li><a href="#products">NanoPolix</a></li>
+                        <li><a href="#products">Melara Air Pillow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://globalbuycentral.site/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Countries Served</h4>
+                    <ul class="footer-links">
+                        <li>🇩🇪 Germany</li>
+                        <li>🇧🇬 Bulgaria</li>
+                        <li>🇮🇹 Italy</li>
+                        <li>🇲🇾 Malaysia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Global Buy Central. All rights reserved.</p>
+                <p>This site participates in affiliate programs and may receive commissions for qualifying purchases.</p>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Add minimal interactivity to enhance the experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hover effect on product cards
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Check if elements are visible for animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            const animatedElements = document.querySelectorAll('.animated');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
